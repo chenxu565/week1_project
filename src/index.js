@@ -25,8 +25,18 @@ function initialzeCode() {
 
   commentButton.addEventListener("click", function () {
     const commentList = document.getElementById("comments");
+    const bigText = document.getElementById("big-text");
+    let comment = bigText.value;
     let newParagraph = document.createElement("li");
-    newParagraph.innerHTML = "comment";
+    newParagraph.innerHTML = comment;
     commentList.appendChild(newParagraph);
+    bigText.value = "";
+  });
+
+  const removeCommentButton = document.getElementById("remove-comments");
+
+  removeCommentButton.addEventListener("click", function () {
+    const commentList = document.getElementById("comments");
+    commentList.replaceChildren();
   });
 }
