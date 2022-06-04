@@ -36,7 +36,9 @@ function initialzeCode() {
   const removeCommentButton = document.getElementById("remove-comments");
 
   removeCommentButton.addEventListener("click", function () {
-    const commentList = document.getElementById("comments");
-    commentList.replaceChildren();
+    if (confirm("Confirm")) {
+      const commentList = document.getElementById("comments");
+      commentList.replaceChildren();
+    }
   });
 }
